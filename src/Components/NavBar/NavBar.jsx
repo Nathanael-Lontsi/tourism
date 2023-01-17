@@ -1,23 +1,28 @@
 import React from 'react';
-import "./NavBar.css"
+import Styles from './NavBar.module.css'
 import logo from '../../assets/images/logo.png'
+import line1 from '../../assets/images/line1.png';
+import { Link } from 'react-router-dom'
 
-export const NavBar = () => {
+export default function NavBar() {
 
-    return (
-      <section className='NavBar'>
-        <div className='photo'>
-          <img src={logo} href='logo'></img>
-        </div>
-        <div className='components'>
-          <a href='#HOME'>Home</a>
-          <a href='#ABOUT'>About</a>
-          <a href='#TOUR-PACKAGE'>Tour package</a>
-          <a href='#GALLERY'>Gallery</a>
-          <a href='#BLOG'>Blog</a>
-          <a href='#CONTACT'>Contact</a>
-        </div>
-        <button>Sign In</button>
-      </section>
-    );
-  }
+  return (
+    <section className={Styles.NavBar}>
+      <div className={Styles.NavBar__logo}>
+        <img src={logo} alt='logo'></img>
+      </div>
+      <div className={Styles.NavBar__line}>
+        <img src={line1} alt="line" />
+      </div>
+      <div className={Styles.NavBar__attributs}>
+        <a href='home'>Home</a>
+        <Link to='about'>About</Link>
+        <a href='tour-package'>Tour package</a>
+        <a href='gallery'>Gallery</a>
+        <a href='blog'>Blog</a>
+        <a href='contact'>Contact</a>
+      </div>
+      <button>Sign In</button>
+    </section>
+  );
+}
